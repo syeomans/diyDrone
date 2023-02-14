@@ -31,20 +31,11 @@ class pid:
     def setSetpoint(self, setpoint):
         self.setpoint = setpoint
 
-    def setKp(self, Kp):
-        self.Kp = Kp
-    
-    def setKi(self, Ki):
-        self.Ki = Ki 
-    
-    def setKd(self, Kd):
-        self.Kd = Kd
-
     def setRunning(self, running):
         self.running = running
 
     def loop(self):
         while self.running:
-           self.updateProcess()
-           self.updateControl()
-           time.sleep(self.dt) 
+           self.updateProcess() #input
+           self.updateControl() #output
+           time.sleep(self.dt)  #observe effect
